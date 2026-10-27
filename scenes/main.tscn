@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_01.tscn" id="2_level"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="3_player"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Level" parent="." instance=ExtResource("2_level")]
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ControlsHint" type="Label" parent="HUD"]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 320.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0.85, 0.85, 0.8, 0.75)
+theme_override_font_sizes/font_size = 10
+text = "WASD / Arrow keys: move      Shift: sprint"
